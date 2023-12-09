@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:resmobile/models/categories_model.dart';
 import 'package:resmobile/views/home_page.dart';
 
 void main() {
@@ -6,15 +7,18 @@ void main() {
 }
 
 class MyApp extends StatelessWidget {
-  const MyApp({super.key});
+  const MyApp({Key? key}) : super(key: key);
 
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
       title: 'MekDhea',
       debugShowCheckedModeBanner: false,
-      theme: ThemeData(),
-      home: const HomePage(),
+      theme: ThemeData(
+        primarySwatch: Colors.blue,
+      ),
+      home: HomePage(
+          categoriesModel: CategoriesModel()), // Pass your actual data here
     );
   }
 }
